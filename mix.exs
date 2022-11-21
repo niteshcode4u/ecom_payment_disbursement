@@ -10,7 +10,14 @@ defmodule EcomPaymentDisbursement.MixProject do
       compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -20,7 +27,7 @@ defmodule EcomPaymentDisbursement.MixProject do
   def application do
     [
       mod: {EcomPaymentDisbursement.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:ex_machina, :logger, :runtime_tools]
     ]
   end
 
@@ -40,7 +47,10 @@ defmodule EcomPaymentDisbursement.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:excoveralls, "~> 0.10", only: :test},
+      {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
+      {:ex_machina, "~> 2.7.0"}
     ]
   end
 
