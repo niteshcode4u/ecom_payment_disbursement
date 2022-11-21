@@ -1,0 +1,12 @@
+{
+  "skip_files": [
+    "lib/ecom_payment_disbursement/application.ex",
+    "lib/ecom_payment_disbursement/repo.ex",
+    "lib/ecom_payment_disbursement/schemas/",
+    "lib/ecom_payment_disbursement_web.ex",
+    "lib/ecom_payment_disbursement_web/endpoint.ex",
+    "lib/ecom_payment_disbursement_web/telemetry.ex",
+    "lib/ecom_payment_disbursement_web/views/error_helpers.ex",
+    "test/support/data_case.ex"
+  ]
+}
