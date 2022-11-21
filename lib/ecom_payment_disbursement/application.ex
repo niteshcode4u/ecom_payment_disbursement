@@ -14,10 +14,8 @@ defmodule EcomPaymentDisbursement.Application do
       EcomPaymentDisbursementWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: EcomPaymentDisbursement.PubSub},
-      # Start the Endpoint (http/https)
-      EcomPaymentDisbursementWeb.Endpoint
-      # Start a worker by calling: EcomPaymentDisbursement.Worker.start_link(arg)
-      # {EcomPaymentDisbursement.Worker, arg}
+      EcomPaymentDisbursementWeb.Endpoint,
+      EcomPaymentDisbursement.DisbursementCalculator
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
