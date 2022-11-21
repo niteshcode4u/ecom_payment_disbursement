@@ -7,5 +7,7 @@ defmodule EcomPaymentDisbursementWeb.Router do
 
   scope "/api", EcomPaymentDisbursementWeb do
     pipe_through :api
+
+    get "/disbursements", DisbursementController, :get_disbursements
   end
 end
